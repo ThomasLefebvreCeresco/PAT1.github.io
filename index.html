@@ -28,19 +28,7 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="data/DEPARTEMENT_0.js"></script>
-        <script src="data/interco_IDFcopier_1.js"></script>
-        <script src="data/interco_IDFcopier_2.js"></script>
-        <script src="data/interco_IDF_3.js"></script>
-        <script src="data/LIMITE_DEPARTEMENT_4.js"></script>
-        <script src="data/groupementscollectivitesterritoriales2017_5.js"></script>
-        <script src="data/IDF_6.js"></script>
-        <script src="data/COMMUNE_7.js"></script>
-        <script src="data/N_ENP_PNR_S_000_8.js"></script>
-        <script src="data/lescommunesgeneraliseesdiledefrance_9.js"></script>
-        <script src="data/nouvelles_regions_10.js"></script>
-        <script src="data/LIMITE_COMMUNE_11.js"></script>
-        <script src="data/PAT_DRIAAF_Sept09_13.js"></script>
+        <script src="data/PAT_DRIAAF_Sept09_1.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
@@ -51,390 +39,10 @@
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
-        function pop_DEPARTEMENT_0(feature, layer) {
-        }
-
-        function style_DEPARTEMENT_0_0() {
-            return {
-                pane: 'pane_DEPARTEMENT_0',
-                opacity: 1,
-                color: 'rgba(35,35,35,0.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(133,182,111,0.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_DEPARTEMENT_0');
-        map.getPane('pane_DEPARTEMENT_0').style.zIndex = 400;
-        map.getPane('pane_DEPARTEMENT_0').style['mix-blend-mode'] = 'normal';
-        var layer_DEPARTEMENT_0 = new L.geoJson(json_DEPARTEMENT_0, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_DEPARTEMENT_0',
-            layerName: 'layer_DEPARTEMENT_0',
-            pane: 'pane_DEPARTEMENT_0',
-            onEachFeature: pop_DEPARTEMENT_0,
-            style: style_DEPARTEMENT_0_0,
-        });
-        bounds_group.addLayer(layer_DEPARTEMENT_0);
-        map.addLayer(layer_DEPARTEMENT_0);
-        function pop_interco_IDFcopier_1(feature, layer) {
-        }
-
-        function style_interco_IDFcopier_1_0() {
-            return {
-                pane: 'pane_interco_IDFcopier_1',
-                opacity: 1,
-                color: 'rgba(69,65,65,1.0)',
-                dashArray: '1,5',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 2.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,158,23,0.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_interco_IDFcopier_1');
-        map.getPane('pane_interco_IDFcopier_1').style.zIndex = 401;
-        map.getPane('pane_interco_IDFcopier_1').style['mix-blend-mode'] = 'normal';
-        var layer_interco_IDFcopier_1 = new L.geoJson(json_interco_IDFcopier_1, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_interco_IDFcopier_1',
-            layerName: 'layer_interco_IDFcopier_1',
-            pane: 'pane_interco_IDFcopier_1',
-            onEachFeature: pop_interco_IDFcopier_1,
-            style: style_interco_IDFcopier_1_0,
-        });
-        bounds_group.addLayer(layer_interco_IDFcopier_1);
-        map.addLayer(layer_interco_IDFcopier_1);
-        function pop_interco_IDFcopier_2(feature, layer) {
-        }
-
-        function style_interco_IDFcopier_2_0() {
-            return {
-                pane: 'pane_interco_IDFcopier_2',
-                opacity: 1,
-                color: 'rgba(84,84,84,0.6549019607843137)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,158,23,0.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_interco_IDFcopier_2');
-        map.getPane('pane_interco_IDFcopier_2').style.zIndex = 402;
-        map.getPane('pane_interco_IDFcopier_2').style['mix-blend-mode'] = 'normal';
-        var layer_interco_IDFcopier_2 = new L.geoJson(json_interco_IDFcopier_2, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_interco_IDFcopier_2',
-            layerName: 'layer_interco_IDFcopier_2',
-            pane: 'pane_interco_IDFcopier_2',
-            onEachFeature: pop_interco_IDFcopier_2,
-            style: style_interco_IDFcopier_2_0,
-        });
-        bounds_group.addLayer(layer_interco_IDFcopier_2);
-        map.addLayer(layer_interco_IDFcopier_2);
-        function pop_interco_IDF_3(feature, layer) {
-        }
-
-        function style_interco_IDF_3_0() {
-            return {
-                pane: 'pane_interco_IDF_3',
-                opacity: 1,
-                color: 'rgba(255,255,255,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,158,23,0.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_interco_IDF_3');
-        map.getPane('pane_interco_IDF_3').style.zIndex = 403;
-        map.getPane('pane_interco_IDF_3').style['mix-blend-mode'] = 'normal';
-        var layer_interco_IDF_3 = new L.geoJson(json_interco_IDF_3, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_interco_IDF_3',
-            layerName: 'layer_interco_IDF_3',
-            pane: 'pane_interco_IDF_3',
-            onEachFeature: pop_interco_IDF_3,
-            style: style_interco_IDF_3_0,
-        });
-        bounds_group.addLayer(layer_interco_IDF_3);
-        map.addLayer(layer_interco_IDF_3);
-        function pop_LIMITE_DEPARTEMENT_4(feature, layer) {
-        }
-
-        function style_LIMITE_DEPARTEMENT_4_0() {
-            return {
-                pane: 'pane_LIMITE_DEPARTEMENT_4',
-                opacity: 1,
-                color: 'rgba(209,49,49,0.8509803921568627)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 2.0,
-                fillOpacity: 0,
-                interactive: true,
-            }
-        }
-        map.createPane('pane_LIMITE_DEPARTEMENT_4');
-        map.getPane('pane_LIMITE_DEPARTEMENT_4').style.zIndex = 404;
-        map.getPane('pane_LIMITE_DEPARTEMENT_4').style['mix-blend-mode'] = 'normal';
-        var layer_LIMITE_DEPARTEMENT_4 = new L.geoJson(json_LIMITE_DEPARTEMENT_4, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_LIMITE_DEPARTEMENT_4',
-            layerName: 'layer_LIMITE_DEPARTEMENT_4',
-            pane: 'pane_LIMITE_DEPARTEMENT_4',
-            onEachFeature: pop_LIMITE_DEPARTEMENT_4,
-            style: style_LIMITE_DEPARTEMENT_4_0,
-        });
-        bounds_group.addLayer(layer_LIMITE_DEPARTEMENT_4);
-        map.addLayer(layer_LIMITE_DEPARTEMENT_4);
-        function pop_groupementscollectivitesterritoriales2017_5(feature, layer) {
-        }
-
-        function style_groupementscollectivitesterritoriales2017_5_0() {
-            return {
-                pane: 'pane_groupementscollectivitesterritoriales2017_5',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(225,89,137,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_groupementscollectivitesterritoriales2017_5');
-        map.getPane('pane_groupementscollectivitesterritoriales2017_5').style.zIndex = 405;
-        map.getPane('pane_groupementscollectivitesterritoriales2017_5').style['mix-blend-mode'] = 'normal';
-        var layer_groupementscollectivitesterritoriales2017_5 = new L.geoJson(json_groupementscollectivitesterritoriales2017_5, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_groupementscollectivitesterritoriales2017_5',
-            layerName: 'layer_groupementscollectivitesterritoriales2017_5',
-            pane: 'pane_groupementscollectivitesterritoriales2017_5',
-            onEachFeature: pop_groupementscollectivitesterritoriales2017_5,
-            style: style_groupementscollectivitesterritoriales2017_5_0,
-        });
-        bounds_group.addLayer(layer_groupementscollectivitesterritoriales2017_5);
-        map.addLayer(layer_groupementscollectivitesterritoriales2017_5);
-        function pop_IDF_6(feature, layer) {
-        }
-
-        function style_IDF_6_0() {
-            return {
-                pane: 'pane_IDF_6',
-                opacity: 1,
-                color: 'rgba(0,0,0,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(109,91,169,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_IDF_6');
-        map.getPane('pane_IDF_6').style.zIndex = 406;
-        map.getPane('pane_IDF_6').style['mix-blend-mode'] = 'normal';
-        var layer_IDF_6 = new L.geoJson(json_IDF_6, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_IDF_6',
-            layerName: 'layer_IDF_6',
-            pane: 'pane_IDF_6',
-            onEachFeature: pop_IDF_6,
-            style: style_IDF_6_0,
-        });
-        bounds_group.addLayer(layer_IDF_6);
-        map.addLayer(layer_IDF_6);
-        function pop_COMMUNE_7(feature, layer) {
-        }
-
-        function style_COMMUNE_7_0() {
-            return {
-                pane: 'pane_COMMUNE_7',
-                opacity: 1,
-                color: 'rgba(0,0,0,0.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(115,184,233,0.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_COMMUNE_7');
-        map.getPane('pane_COMMUNE_7').style.zIndex = 407;
-        map.getPane('pane_COMMUNE_7').style['mix-blend-mode'] = 'normal';
-        var layer_COMMUNE_7 = new L.geoJson(json_COMMUNE_7, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_COMMUNE_7',
-            layerName: 'layer_COMMUNE_7',
-            pane: 'pane_COMMUNE_7',
-            onEachFeature: pop_COMMUNE_7,
-            style: style_COMMUNE_7_0,
-        });
-        bounds_group.addLayer(layer_COMMUNE_7);
-        map.addLayer(layer_COMMUNE_7);
-        function pop_N_ENP_PNR_S_000_8(feature, layer) {
-        }
-
-        function style_N_ENP_PNR_S_000_8_0() {
-            return {
-                pane: 'pane_N_ENP_PNR_S_000_8',
-                opacity: 1,
-                color: 'rgba(74,124,71,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 2.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(120,157,85,0.7568627450980392)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_N_ENP_PNR_S_000_8');
-        map.getPane('pane_N_ENP_PNR_S_000_8').style.zIndex = 408;
-        map.getPane('pane_N_ENP_PNR_S_000_8').style['mix-blend-mode'] = 'normal';
-        var layer_N_ENP_PNR_S_000_8 = new L.geoJson(json_N_ENP_PNR_S_000_8, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_N_ENP_PNR_S_000_8',
-            layerName: 'layer_N_ENP_PNR_S_000_8',
-            pane: 'pane_N_ENP_PNR_S_000_8',
-            onEachFeature: pop_N_ENP_PNR_S_000_8,
-            style: style_N_ENP_PNR_S_000_8_0,
-        });
-        bounds_group.addLayer(layer_N_ENP_PNR_S_000_8);
-        map.addLayer(layer_N_ENP_PNR_S_000_8);
-        function pop_lescommunesgeneraliseesdiledefrance_9(feature, layer) {
-        }
-
-        function style_lescommunesgeneraliseesdiledefrance_9_0() {
-            return {
-                pane: 'pane_lescommunesgeneraliseesdiledefrance_9',
-                opacity: 1,
-                color: 'rgba(125,119,119,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(246,187,147,0.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_lescommunesgeneraliseesdiledefrance_9');
-        map.getPane('pane_lescommunesgeneraliseesdiledefrance_9').style.zIndex = 409;
-        map.getPane('pane_lescommunesgeneraliseesdiledefrance_9').style['mix-blend-mode'] = 'normal';
-        var layer_lescommunesgeneraliseesdiledefrance_9 = new L.geoJson(json_lescommunesgeneraliseesdiledefrance_9, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_lescommunesgeneraliseesdiledefrance_9',
-            layerName: 'layer_lescommunesgeneraliseesdiledefrance_9',
-            pane: 'pane_lescommunesgeneraliseesdiledefrance_9',
-            onEachFeature: pop_lescommunesgeneraliseesdiledefrance_9,
-            style: style_lescommunesgeneraliseesdiledefrance_9_0,
-        });
-        bounds_group.addLayer(layer_lescommunesgeneraliseesdiledefrance_9);
-        map.addLayer(layer_lescommunesgeneraliseesdiledefrance_9);
-        function pop_nouvelles_regions_10(feature, layer) {
-        }
-
-        function style_nouvelles_regions_10_0() {
-            return {
-                pane: 'pane_nouvelles_regions_10',
-                opacity: 1,
-                color: 'rgba(0,0,0,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(244,190,167,0.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_nouvelles_regions_10');
-        map.getPane('pane_nouvelles_regions_10').style.zIndex = 410;
-        map.getPane('pane_nouvelles_regions_10').style['mix-blend-mode'] = 'normal';
-        var layer_nouvelles_regions_10 = new L.geoJson(json_nouvelles_regions_10, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_nouvelles_regions_10',
-            layerName: 'layer_nouvelles_regions_10',
-            pane: 'pane_nouvelles_regions_10',
-            onEachFeature: pop_nouvelles_regions_10,
-            style: style_nouvelles_regions_10_0,
-        });
-        bounds_group.addLayer(layer_nouvelles_regions_10);
-        map.addLayer(layer_nouvelles_regions_10);
-        function pop_LIMITE_COMMUNE_11(feature, layer) {
-        }
-
-        function style_LIMITE_COMMUNE_11_0() {
-            return {
-                pane: 'pane_LIMITE_COMMUNE_11',
-                opacity: 1,
-                color: 'rgba(5,197,191,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-                interactive: true,
-            }
-        }
-        map.createPane('pane_LIMITE_COMMUNE_11');
-        map.getPane('pane_LIMITE_COMMUNE_11').style.zIndex = 411;
-        map.getPane('pane_LIMITE_COMMUNE_11').style['mix-blend-mode'] = 'normal';
-        var layer_LIMITE_COMMUNE_11 = new L.geoJson(json_LIMITE_COMMUNE_11, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_LIMITE_COMMUNE_11',
-            layerName: 'layer_LIMITE_COMMUNE_11',
-            pane: 'pane_LIMITE_COMMUNE_11',
-            onEachFeature: pop_LIMITE_COMMUNE_11,
-            style: style_LIMITE_COMMUNE_11_0,
-        });
-        bounds_group.addLayer(layer_LIMITE_COMMUNE_11);
-        map.addLayer(layer_LIMITE_COMMUNE_11);
-        map.createPane('pane_Positron_12');
-        map.getPane('pane_Positron_12').style.zIndex = 412;
-        var layer_Positron_12 = L.tileLayer('http://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-            pane: 'pane_Positron_12',
+        map.createPane('pane_Positron_0');
+        map.getPane('pane_Positron_0').style.zIndex = 400;
+        var layer_Positron_0 = L.tileLayer('http://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+            pane: 'pane_Positron_0',
             opacity: 1.0,
             attribution: '<a href="https://cartodb.com/basemaps/">Map tiles by CartoDB, under CC BY 3.0. Data by OpenStreetMap, under ODbL.</a>',
             minZoom: 1,
@@ -442,9 +50,9 @@
             minNativeZoom: 0,
             maxNativeZoom: 20
         });
-        layer_Positron_12;
-        map.addLayer(layer_Positron_12);
-        function pop_PAT_DRIAAF_Sept09_13(feature, layer) {
+        layer_Positron_0;
+        map.addLayer(layer_Positron_0);
+        function pop_PAT_DRIAAF_Sept09_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['pat_Num'] !== null ? autolinker.link(feature.properties['pat_Num'].toLocaleString()) : '') + '</td>\
@@ -459,9 +67,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_PAT_DRIAAF_Sept09_13_0() {
+        function style_PAT_DRIAAF_Sept09_1_0() {
             return {
-                pane: 'pane_PAT_DRIAAF_Sept09_13',
+                pane: 'pane_PAT_DRIAAF_Sept09_1',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -474,83 +82,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_PAT_DRIAAF_Sept09_13');
-        map.getPane('pane_PAT_DRIAAF_Sept09_13').style.zIndex = 413;
-        map.getPane('pane_PAT_DRIAAF_Sept09_13').style['mix-blend-mode'] = 'normal';
-        var layer_PAT_DRIAAF_Sept09_13 = new L.geoJson(json_PAT_DRIAAF_Sept09_13, {
+        map.createPane('pane_PAT_DRIAAF_Sept09_1');
+        map.getPane('pane_PAT_DRIAAF_Sept09_1').style.zIndex = 401;
+        map.getPane('pane_PAT_DRIAAF_Sept09_1').style['mix-blend-mode'] = 'normal';
+        var layer_PAT_DRIAAF_Sept09_1 = new L.geoJson(json_PAT_DRIAAF_Sept09_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_PAT_DRIAAF_Sept09_13',
-            layerName: 'layer_PAT_DRIAAF_Sept09_13',
-            pane: 'pane_PAT_DRIAAF_Sept09_13',
-            onEachFeature: pop_PAT_DRIAAF_Sept09_13,
-            style: style_PAT_DRIAAF_Sept09_13_0,
+            dataVar: 'json_PAT_DRIAAF_Sept09_1',
+            layerName: 'layer_PAT_DRIAAF_Sept09_1',
+            pane: 'pane_PAT_DRIAAF_Sept09_1',
+            onEachFeature: pop_PAT_DRIAAF_Sept09_1,
+            style: style_PAT_DRIAAF_Sept09_1_0,
         });
-        bounds_group.addLayer(layer_PAT_DRIAAF_Sept09_13);
-        map.addLayer(layer_PAT_DRIAAF_Sept09_13);
+        bounds_group.addLayer(layer_PAT_DRIAAF_Sept09_1);
+        map.addLayer(layer_PAT_DRIAAF_Sept09_1);
         setBounds();
-        var i = 0;
-        layer_DEPARTEMENT_0.eachLayer(function(layer) {
-            var context = {
-                feature: layer.feature,
-                variables: {}
-            };
-            layer.bindTooltip((layer.feature.properties['NOM_DEPT'] !== null?String('<div style="color: #a35e5e; font-size: 10pt; font-family: \'Agency FB\', sans-serif;">' + layer.feature.properties['NOM_DEPT']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_DEPARTEMENT_0'});
-            labels.push(layer);
-            totalMarkers += 1;
-              layer.added = true;
-              addLabel(layer, i);
-              i++;
-        });
-        var i = 0;
-        layer_interco_IDFcopier_1.eachLayer(function(layer) {
-            var context = {
-                feature: layer.feature,
-                variables: {}
-            };
-            layer.bindTooltip((layer.feature.properties['NOM'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Agency FB\', sans-serif;">' + layer.feature.properties['NOM']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_interco_IDFcopier_1'});
-            labels.push(layer);
-            totalMarkers += 1;
-              layer.added = true;
-              addLabel(layer, i);
-              i++;
-        });
-        var i = 0;
-        layer_COMMUNE_7.eachLayer(function(layer) {
-            var context = {
-                feature: layer.feature,
-                variables: {}
-            };
-            layer.bindTooltip((layer.feature.properties['NOM_COMM'] !== null?String('<div style="color: #323232; font-size: 7pt; font-weight: bold; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['NOM_COMM']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_COMMUNE_7'});
-            labels.push(layer);
-            totalMarkers += 1;
-              layer.added = true;
-              addLabel(layer, i);
-              i++;
-        });
-        var i = 0;
-        layer_N_ENP_PNR_S_000_8.eachLayer(function(layer) {
-            var context = {
-                feature: layer.feature,
-                variables: {}
-            };
-            layer.bindTooltip((layer.feature.properties['NOM_SITE'] !== null?String('<div style="color: #323232; font-size: 8pt; font-style: italic; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['NOM_SITE']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_N_ENP_PNR_S_000_8'});
-            labels.push(layer);
-            totalMarkers += 1;
-              layer.added = true;
-              addLabel(layer, i);
-              i++;
-        });
-        resetLabels([layer_DEPARTEMENT_0,layer_interco_IDFcopier_1,layer_COMMUNE_7,layer_N_ENP_PNR_S_000_8]);
-        map.on("zoomend", function(){
-            resetLabels([layer_DEPARTEMENT_0,layer_interco_IDFcopier_1,layer_COMMUNE_7,layer_N_ENP_PNR_S_000_8]);
-        });
-        map.on("layeradd", function(){
-            resetLabels([layer_DEPARTEMENT_0,layer_interco_IDFcopier_1,layer_COMMUNE_7,layer_N_ENP_PNR_S_000_8]);
-        });
-        map.on("layerremove", function(){
-            resetLabels([layer_DEPARTEMENT_0,layer_interco_IDFcopier_1,layer_COMMUNE_7,layer_N_ENP_PNR_S_000_8]);
-        });
         </script>
     </body>
 </html>
