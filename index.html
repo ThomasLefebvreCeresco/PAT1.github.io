@@ -6,42 +6,8 @@
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <link rel="stylesheet" href="./resources/ol.css">
-        <link rel="stylesheet" href="resources/fontawesome-all.min.css">
-        <link rel="stylesheet" href="./resources/ol-layerswitcher.css">
-        <link rel="stylesheet" href="./resources/qgis2web.css">
-<style>
-.search-layer {
-  top: 65px;
-  left: .5em;
-}
-.ol-touch .search-layer {
-  top: 80px;
-}
-</style>
-        <style>
-        html, body {
-            background-color: #ffffff;
-        }
-        .ol-control button {
-            background-color: #f8f8f8 !important;
-            color: #000000 !important;
-            border-radius: 0px !important;
-        }
-        .ol-zoom, .geolocate, .gcd-gl-control .ol-control {
-            background-color: rgba(255,255,255,.4) !important;
-            padding: 3px !important;
-        }
-        .ol-scale-line {
-            background: none !important;
-        }
-        .ol-scale-line-inner {
-            border: 2px solid #f8f8f8 !important;
-            border-top: none !important;
-            background: rgba(255, 255, 255, 0.5) !important;
-            color: black !important;
-        }
-        </style>
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
         <style>
         #map {
             width: 1346px;
@@ -52,20 +18,228 @@
     </head>
     <body>
         <div id="map">
-            <div id="popup" class="ol-popup">
-                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
-                <div id="popup-content"></div>
-            </div>
         </div>
-        <script src="resources/qgis2web_expressions.js"></script>
-        <script src="resources/polyfills.js"></script>
-        <script src="./resources/functions.js"></script>
-        <script src="./resources/ol.js"></script>
-        <script src="./resources/ol-layerswitcher.js"></script>
-        <script src="layers/PAT_DRIAAF_Sept09_1.js"></script>
-        <script src="styles/PAT_DRIAAF_Sept09_1_style.js"></script>
-        <script src="./layers/layers.js" type="text/javascript"></script> 
-        <script src="./resources/Autolinker.min.js"></script>
-        <script src="./resources/qgis2web.js"></script>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/interco_IDFcopier_1.js"></script>
+        <script src="data/LIMITE_DEPARTEMENT_2.js"></script>
+        <script src="data/PAT_DRIAAF_Sept09_3.js"></script>
+        <script>
+        var highlightLayer;
+        function highlightFeature(e) {
+            highlightLayer = e.target;
+            highlightLayer.openPopup();
+        }
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        })
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+            if (bounds_group.getLayers().length) {
+                map.fitBounds(bounds_group.getBounds());
+            }
+        }
+        map.createPane('pane_Positron_0');
+        map.getPane('pane_Positron_0').style.zIndex = 400;
+        var layer_Positron_0 = L.tileLayer('http://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+            pane: 'pane_Positron_0',
+            opacity: 1.0,
+            attribution: '<a href="https://cartodb.com/basemaps/">Map tiles by CartoDB, under CC BY 3.0. Data by OpenStreetMap, under ODbL.</a>',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 20
+        });
+        layer_Positron_0;
+        map.addLayer(layer_Positron_0);
+        function pop_interco_IDFcopier_1(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(feature.properties['OBJECTID'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NOM'] !== null ? autolinker.link(feature.properties['NOM'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NOM_EPCI'] !== null ? autolinker.link(feature.properties['NOM_EPCI'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TYPE_EPCI'] !== null ? autolinker.link(feature.properties['TYPE_EPCI'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CODE_EPCI'] !== null ? autolinker.link(feature.properties['CODE_EPCI'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SHAPE_Leng'] !== null ? autolinker.link(feature.properties['SHAPE_Leng'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SHAPE_Area'] !== null ? autolinker.link(feature.properties['SHAPE_Area'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_interco_IDFcopier_1_0() {
+            return {
+                pane: 'pane_interco_IDFcopier_1',
+                opacity: 1,
+                color: 'rgba(84,84,84,0.6549019607843137)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,158,23,0.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_interco_IDFcopier_1');
+        map.getPane('pane_interco_IDFcopier_1').style.zIndex = 401;
+        map.getPane('pane_interco_IDFcopier_1').style['mix-blend-mode'] = 'normal';
+        var layer_interco_IDFcopier_1 = new L.geoJson(json_interco_IDFcopier_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_interco_IDFcopier_1',
+            layerName: 'layer_interco_IDFcopier_1',
+            pane: 'pane_interco_IDFcopier_1',
+            onEachFeature: pop_interco_IDFcopier_1,
+            style: style_interco_IDFcopier_1_0,
+        });
+        bounds_group.addLayer(layer_interco_IDFcopier_1);
+        map.addLayer(layer_interco_IDFcopier_1);
+        function pop_LIMITE_DEPARTEMENT_2(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ID_GEOFLA'] !== null ? autolinker.link(feature.properties['ID_GEOFLA'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NATURE'] !== null ? autolinker.link(feature.properties['NATURE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_LIMITE_DEPARTEMENT_2_0() {
+            return {
+                pane: 'pane_LIMITE_DEPARTEMENT_2',
+                opacity: 1,
+                color: 'rgba(209,49,49,0.8509803921568627)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+        }
+        map.createPane('pane_LIMITE_DEPARTEMENT_2');
+        map.getPane('pane_LIMITE_DEPARTEMENT_2').style.zIndex = 402;
+        map.getPane('pane_LIMITE_DEPARTEMENT_2').style['mix-blend-mode'] = 'normal';
+        var layer_LIMITE_DEPARTEMENT_2 = new L.geoJson(json_LIMITE_DEPARTEMENT_2, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_LIMITE_DEPARTEMENT_2',
+            layerName: 'layer_LIMITE_DEPARTEMENT_2',
+            pane: 'pane_LIMITE_DEPARTEMENT_2',
+            onEachFeature: pop_LIMITE_DEPARTEMENT_2,
+            style: style_LIMITE_DEPARTEMENT_2_0,
+        });
+        bounds_group.addLayer(layer_LIMITE_DEPARTEMENT_2);
+        map.addLayer(layer_LIMITE_DEPARTEMENT_2);
+        function pop_PAT_DRIAAF_Sept09_3(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['pat_Num'] !== null ? autolinker.link(feature.properties['pat_Num'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['pat_Nom'] !== null ? autolinker.link(feature.properties['pat_Nom'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['date_label'] !== null ? autolinker.link(feature.properties['date_label'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_PAT_DRIAAF_Sept09_3_0() {
+            return {
+                pane: 'pane_PAT_DRIAAF_Sept09_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(237,100,100,0.5803921568627451)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_PAT_DRIAAF_Sept09_3');
+        map.getPane('pane_PAT_DRIAAF_Sept09_3').style.zIndex = 403;
+        map.getPane('pane_PAT_DRIAAF_Sept09_3').style['mix-blend-mode'] = 'normal';
+        var layer_PAT_DRIAAF_Sept09_3 = new L.geoJson(json_PAT_DRIAAF_Sept09_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PAT_DRIAAF_Sept09_3',
+            layerName: 'layer_PAT_DRIAAF_Sept09_3',
+            pane: 'pane_PAT_DRIAAF_Sept09_3',
+            onEachFeature: pop_PAT_DRIAAF_Sept09_3,
+            style: style_PAT_DRIAAF_Sept09_3_0,
+        });
+        bounds_group.addLayer(layer_PAT_DRIAAF_Sept09_3);
+        map.addLayer(layer_PAT_DRIAAF_Sept09_3);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/PAT_DRIAAF_Sept09_3.png" /> PAT_DRIAAF_Sept/09': layer_PAT_DRIAAF_Sept09_3,'<img src="legend/LIMITE_DEPARTEMENT_2.png" /> LIMITE_DEPARTEMENT': layer_LIMITE_DEPARTEMENT_2,'<img src="legend/interco_IDFcopier_1.png" /> interco_IDF copier': layer_interco_IDFcopier_1,"Positron": layer_Positron_0,}).addTo(map);
+        setBounds();
+        </script>
     </body>
 </html>
